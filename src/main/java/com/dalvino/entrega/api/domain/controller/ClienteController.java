@@ -1,12 +1,9 @@
 package com.dalvino.entrega.api.domain.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
-import javax.websocket.server.PathParam;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,11 +17,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dalvino.entrega.api.domain.model.Cliente;
-import com.dalvino.entrega.api.domain.repository.ClienteRepository;
 import com.dalvino.entrega.api.domain.service.ClienteService;
 
 import lombok.AllArgsConstructor;
-import net.bytebuddy.asm.Advice.Return;
 
 @AllArgsConstructor
 @RestController

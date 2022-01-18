@@ -1,6 +1,6 @@
 package com.dalvino.entrega.api.exceptionhandler;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 		
 		Problema problema = new Problema();
 		problema.setStatus(status.value());
-		problema.setDataHora(LocalDateTime.now());
+		problema.setDataHora(OffsetDateTime.now());
 		problema.setDescricao("Foram informado valores inválidos! Por favor, preencha corretamente e tente novamente.");
 		problema.setCampos(listaCampos);
 		return handleExceptionInternal(ex, problema, headers, status, request);
@@ -55,7 +55,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 		
 		Problema problema = new Problema();
 		problema.setStatus(status.value());
-		problema.setDataHora(LocalDateTime.now());
+		problema.setDataHora(OffsetDateTime.now());
 		problema.setDescricao(domainException.getMessage());
 		
 		return handleExceptionInternal(domainException, problema, new HttpHeaders(), status, request);

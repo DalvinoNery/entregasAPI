@@ -37,6 +37,12 @@ public class ClienteService {
 		.orElse(ResponseEntity.notFound().build());
 	}
 	
+	
+	public Cliente burcarPorId(Long clienteId) {
+		return clienteRepository.findById(clienteId)
+				.orElseThrow(() -> new DomainException("O cliente informado não existe"));
+	}
+	
 	public List<Cliente> listar(){
 		return clienteRepository.findAll();
 	}
